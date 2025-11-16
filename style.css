@@ -107,20 +107,28 @@ padding: 20px;
 
 /* SKILL CARDS */
 .skill-card {
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
   border-radius: 14px;
   transition: all 0.3s ease;
+  letter-spacing: 1px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
 .skill-card:hover {
-  /* transform: translateY(-8px); */
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
   transform: scale(1.03);
-  box-shadow: 0 0 30px rgba(255, 149, 0, 0.409);
+  transition: .3s ease;
   border-color: var(--accent);
+  cursor: pointer;
 }
-
+.skill-card h5{
+  color: var(--accent-glow);
+}
+.row .reveal a{
+  text-decoration: none;
+}
 /* PROJECTS */
-.project-row { padding: 2rem 0; border-radius: 12px; }
+.project-row { padding: 2rem 0; border-radius: 12px;}
 .project-img {
   min-height: 180px;
   max-height: 320px;
@@ -129,12 +137,23 @@ padding: 20px;
   border-radius: 10px;
   border: 2px solid rgba(255,255,255,0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  
 }
 .project-img:hover {
   transform: scale(1.03);
   box-shadow: 0 0 25px rgba(255, 149, 0, 0.3);
 }
-
+.project-card-des p{
+  letter-spacing: 1px;
+  max-width: 520px;
+  line-height: 1.6;
+  text-align: justify;
+}
+.project-card-des h4{
+  color: var(--accent-glow);
+  text-shadow: 0 0 6px rgba(255, 217, 90, 0.4);
+  letter-spacing: 1px;
+}
 /* CONTACT */
 .form-control {
   background: rgba(255,255,255,0.05);
@@ -153,6 +172,7 @@ padding: 20px;
   color: #000;
   font-weight: 700;
   transition: all 0.3s ease;
+  margin-right: 10px;
 }
 .btn-accent:hover {
   background: linear-gradient(90deg, var(--accent-glow), var(--accent));
@@ -197,3 +217,107 @@ footer {
 
 
 
+/* Section Styling */
+#contact {
+  background: #0d0d0d;
+  color: #fff;
+}
+
+/* Heading */
+.contact-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #FFD95A; /* Premium gold */
+}
+
+.contact-subtitle {
+  color: #cfcfcf;
+  font-size: 16px;
+}
+
+/* Contact Info List */
+.contact-info li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.contact-info a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+/* Social Buttons */
+.btn-contact {
+  background: #ff9100;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.btn-contact:hover {
+  background: #ffb347;
+}
+
+.btn-contact-outline {
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.btn-contact-outline:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Resume Button */
+.btn-resume {
+  background: #FFD95A;
+  color: #000;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.btn-resume:hover {
+  background: #ffe7a2;
+}
+
+/* Contact Form Card */
+.contact-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+/* Input Styling */
+.contact-input {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  &::placeholder{
+    color: var(--accent-glow);
+  }
+}
+
+.contact-input:focus {
+  border-color: #ff9100;
+  box-shadow: 0 0 6px rgba(255, 145, 0, 0.5);
+}
+
+/* Send button */
+.btn-send {
+  background: #ff9100;
+  color: #000;
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.btn-send:hover {
+  background: #ffb347;
+}
