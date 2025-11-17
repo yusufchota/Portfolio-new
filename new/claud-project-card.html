@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Education</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #000000;     
+            --card: #0d0d0d;         
+            --accent: #00b4d8;         
+            --accent-glow: #48cae4;    
+            --muted: #d1d5db;          
+            --white: #ffffff; 
+        } 
+        
+        * { 
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        } 
+        
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; 
+            background: linear-gradient(180deg, var(--bg) 0%, #111111 100%); 
+            color: var(--white); 
+            -webkit-font-smoothing: antialiased; 
+            -moz-osx-font-smoothing: grayscale; 
+            scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .section-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Timeline Container */
+        .timeline-container {
+            position: relative;
+            padding: 40px 0 80px;
+        }
+
+        /* Central Timeline Line */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent) 0%, var(--accent-glow) 100%);
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        /* Timeline Item */
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        /* Center Dot */
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 4px solid var(--bg);
+            box-shadow: 0 0 20px var(--accent);
+            z-index: 10;
+        }
+
+        /* Cards */
+        .timeline-card {
+            background: var(--card);
+            border: 2px solid rgba(0, 180, 216, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(0, 180, 216, 0.3);
+            transform: translateY(-5px);
+        }
+
+        /* Left Side Cards */
+        .timeline-left {
+            padding-right: 60px;
+        }
+
+        .timeline-left .timeline-card {
+            margin-left: 0;
+        }
+
+        /* Right Side Cards */
+        .timeline-right {
+            padding-left: 60px;
+        }
+
+        .timeline-right .timeline-card {
+            margin-right: 0;
+        }
+
+        /* Card Content */
+        .card-date {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .card-subtitle {
+            font-size: 1rem;
+            color: var(--muted);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-content {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .cgpa-badge {
+            display: inline-block;
+            background: rgba(0, 180, 216, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 30px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .timeline-left,
+            .timeline-right {
+                padding-left: 70px !important;
+                padding-right: 0 !important;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .section-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .card-content {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <div class="logo">Port<span>folio</span>.</div>
+                </div>
+                <div class="col-6">
+                    <ul class="nav-links justify-content-end">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#education" class="active">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h1>Education & <i class="fas fa-briefcase"></i> Experience</h1>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Timeline Line -->
+                <div class="timeline-line"></div>
+
+                <!-- Timeline Item 1 - Left Side (Education) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="row">
+                        <div class="col-md-6 timeline-left">
+                            <div class="timeline-card">
+                                <div class="card-date">
+                                    <i class="far fa-calendar"></i> 10/08/2020
+                                </div>
+                                <h3 class="card-title">SSLC - Tamil Nadu-State Board</h3>
+                                <div class="card-subtitle">
+                                    <i class="fas fa-graduation-cap"></i> Zigma Matric Hr.Sec School, Medavakkam
+                                </div>
+                                <div class="card-content">
+                                    I completed my schooling at Zigma Matric Hr.Sec School, Medavakkam, where I built a strong foundation in academics and developed essential skills for my future education.
+                                </div>
+                                <div class="cgpa-badge">
+                                    <i class="fas fa-award"></i> CGPA: 63%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 - Right Side (Experience) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 timeline-right">
+                            <div class="timeline-card">
+                                <div class="card-date">
+                                    <i class="far fa-calendar"></i> 2022 - Till
+                                </div>
+                                <h3 class="card-title">IT Support / App Tech - Chennai, IN</h3>
+                                <div class="card-subtitle">
+                                    <i class="fas fa-building"></i> Part-time Position
+                                </div>
+                                <div class="card-content">
+                                    I have been working part-time for several years at a company that specializes in conducting various exams, both online and offline. As a Problem Solver and System Administrator support, I have played a key role in managing numerous projects. Notably, I worked on the Income Tax Exam project held at Bharath University, Chennai from September 1 to 5, 2024.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 - Left Side (Education) -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="row">
+                        <div class="col-md-6 timeline-left">
+                            <div class="timeline-card">
+                                <div class="card-date">
+                                    <i class="far fa-calendar"></i> 20/06/2022
+                                </div>
+                                <h3 class="card-title">HSSLC - Tamil Nadu-State Board</h3>
+                                <div class="card-subtitle">
+                                    <i class="fas fa-graduation-cap"></i> Higher Secondary Education
+                                </div>
+                                <div class="card-content">
+                                    I successfully completed my higher secondary education from Tamil Nadu State Board, further strengthening my academic credentials and preparing for higher education opportunities.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
