@@ -68,7 +68,20 @@ padding: 20px;
   transform: scale(1.05);
   box-shadow: 0 0 50px rgba(255, 149, 0, 0.6);
 }
+/* Resume Button */
+.btn-resume {
+  background: var(--bg);
+  color: var(--white);
+  font-weight: 600;
+  padding: 8px 26px;
+  border-radius: 8px;
+  border: 1px solid var(--white);
+  letter-spacing: 1px;
+}
 
+.btn-resume:hover {
+  background: var(--accent);
+}
 /* About */
 .fadeIn {
   opacity: 0;
@@ -214,24 +227,15 @@ footer {
   .hero { padding: 3.5rem 0; }
 }
 
-
-
-
-/* Section Styling */
-#contact {
-  background: #0d0d0d;
-  color: #fff;
-}
-
 /* Heading */
 .contact-title {
   font-size: 32px;
   font-weight: 700;
-  color: #FFD95A; /* Premium gold */
+  color: var(--accent);
 }
 
 .contact-subtitle {
-  color: #cfcfcf;
+  color: var(--muted);
   font-size: 16px;
 }
 
@@ -241,47 +245,29 @@ footer {
   font-size: 15px;
 }
 
-.contact-info a {
-  color: #00aaff;
-  text-decoration: none;
-}
-
 /* Social Buttons */
 .btn-contact {
-  background: #ff9100;
-  color: #000;
+  background: var(--accent);
+  color: var(--bg);
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 8px;
 }
 
 .btn-contact:hover {
-  background: #ffb347;
+  background: var(--accent-glow);
 }
 
 .btn-contact-outline {
-  border: 1px solid #fff;
-  color: #fff;
+  border: 1px solid var(--muted);
+  color: var(--white);
   padding: 8px 16px;
   border-radius: 8px;
 }
 
 .btn-contact-outline:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* Resume Button */
-.btn-resume {
-  background: #FFD95A;
-  color: #000;
-  font-weight: 600;
-  padding: 8px 16px;
-  border-radius: 8px;
-}
-
-.btn-resume:hover {
-  background: #ffe7a2;
+  background: var(--muted);
+  color: var(--bg);
 }
 
 /* Contact Form Card */
@@ -307,11 +293,12 @@ footer {
 .contact-input:focus {
   border-color: #ff9100;
   box-shadow: 0 0 6px rgba(255, 145, 0, 0.5);
+  color: var(--bg);
 }
 
 /* Send button */
 .btn-send {
-  background: #ff9100;
+  background: var(--accent);
   color: #000;
   font-weight: 700;
   padding: 12px;
@@ -319,5 +306,5 @@ footer {
 }
 
 .btn-send:hover {
-  background: #ffb347;
+  background: var(--accent-glow);
 }
