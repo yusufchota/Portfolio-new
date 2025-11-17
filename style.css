@@ -1,9 +1,9 @@
 :root {
-  --bg: #000000;            /* Deep black background */
-  --card: #0d0d0d;          /* Slightly lighter dark for cards */
-  --accent: #ff9500;        /* Bright orange */
-  --accent-glow: #ffb347;   /* Lighter orange for gradients */
-  --muted: #d1d5db;         /* Light gray text */
+  --bg: #000000;    
+  --card: #0d0d0d;        
+  --accent: #ff9500;        
+  --accent-glow: #ffb347;   
+  --muted: #d1d5db;         
   --white: #ffffff;
 }
 
@@ -18,7 +18,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* NAV */
+/* NAVBAR*/
 .navbar {
 padding: 20px;
   backdrop-filter: blur(2px);
