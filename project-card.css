@@ -18,7 +18,7 @@
 
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-  background: linear-gradient(180deg, var(--bg) 0%, #111111 100%);
+  background: var(--bg);
   color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -119,11 +119,15 @@ body {
     color: var(--white);
 }
 
-
 .card-content {
     color: var(--muted);
     line-height: 1.7;
     font-size: 0.95rem;
+}
+.card{
+    margin: 20px 0px;
+    border: none;
+    background: transparent;
 }
 /* BUTTONS */
 .btn-accent {
